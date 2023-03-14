@@ -1,0 +1,122 @@
+commit 8a3f1031c2f6d98ed87f31d045caca2d9a6a410a
+Author: Veetihei <veetiheikkinen99@gmail.com>
+Date:   Tue Mar 14 18:15:52 2023 +0200
+
+    poisto ja uudelleennimeäminen
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 3d598b07b6dd3a927949a426e34b01bb69197902
+Author: Veetihei <veetiheikkinen99@gmail.com>
+Date:   Tue Mar 14 18:11:42 2023 +0200
+
+    tiedostoja ja tiedostot luotu
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 7053c62922b1f5ba7b60463c6833326126b38531
+Author: Veetihei <veetiheikkinen99@gmail.com>
+Date:   Tue Mar 14 18:04:34 2023 +0200
+
+    lisätty tekstiä tiedostoihin
+
+ eka.txt    | 1 +
+ kolmas.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 51872e6c65680037de8153950cc761b6be5f6897
+Author: Veetihei <veetiheikkinen99@gmail.com>
+Date:   Tue Mar 14 18:03:06 2023 +0200
+
+    lisätty kolmas.txt
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 1f90a497aacb1944534fc722c2733211b5f987d0
+Author: Veetihei <veetiheikkinen99@gmail.com>
+Date:   Tue Mar 14 18:02:23 2023 +0200
+
+    poisto ja uudelleen nimeäminen
+
+ kolmas.txt => eka.txt | 0
+ tiedosto.txt          | 6 ------
+ 2 files changed, 6 deletions(-)
+
+commit aae65be67174ee3fe921a72806219818f80410ad
+Author: Veetihei <veetiheikkinen99@gmail.com>
+Date:   Tue Mar 14 17:57:19 2023 +0200
+
+    toinen.txt poistettu
+
+ toinen.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit fd2cda653d12a3c481d259ea329d9b31db49c55c
+Author: Veetihei <veetiheikkinen99@gmail.com>
+Date:   Tue Mar 14 17:55:12 2023 +0200
+
+    uusi poisto ja lisäys tiedostoon
+
+ tiedosto.txt | 8 ++------
+ 1 file changed, 2 insertions(+), 6 deletions(-)
+
+commit fe7561e220c0c4e5215d137f62482a98e2cdba91
+Author: Veetihei <veetiheikkinen99@gmail.com>
+Date:   Tue Mar 14 17:52:18 2023 +0200
+
+    poistettu ja lisätty tiedoston tekstiä
+
+ tiedosto.txt | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 0aec12d99619731af6df3ffc3eb6d74c74bc6b1b
+Author: Veetihei <veetiheikkinen99@gmail.com>
+Date:   Tue Mar 14 17:50:04 2023 +0200
+
+    Lisätty tiedostoon tekstiä
+
+ tiedosto.txt | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+
+commit 343fe529a63ecd872b3f2f49cbd871bfeaaffaca
+Author: Veetihei <veetiheikkinen99@gmail.com>
+Date:   Tue Mar 14 17:41:36 2023 +0200
+
+    uusi stuff hakemisto
+
+ stuff/uusi.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 199e77a017efb52f6ce4048efe0bbbcb045f0ac5
+Author: Veetihei <veetiheikkinen99@gmail.com>
+Date:   Tue Mar 14 17:40:19 2023 +0200
+
+    Luotu kolmas.txt
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit b53c011db327fb410e448a9c706224033285e321
+Author: Veetihei <veetiheikkinen99@gmail.com>
+Date:   Tue Mar 14 17:36:47 2023 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 028b126e76f156a47f0e4680db06d8242046d86c
+Author: Veetihei <veetiheikkinen99@gmail.com>
+Date:   Tue Mar 14 17:34:45 2023 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
