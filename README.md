@@ -17,6 +17,6 @@ Tänne tulee kurssille tehtävät *laskarit*, sekä lopullinen *harjoitustyö*, 
 
 [maksukortti](laskarit/viikko2/maksukortti)
 
-[coverage report](laskarit/viikko2/Screenshotfrom2023-03-15 17-13-27.png)
+[coverage report](laskarit/viikko2/coverage_report_unicafe.png)
 
 Loput tehtävät ilmestyvät tänne pikkuhiljaa
