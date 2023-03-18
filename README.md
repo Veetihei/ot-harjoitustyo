@@ -26,4 +26,5 @@ Loput tehtävät ilmestyvät tänne pikkuhiljaa
 ## Dokumentaatio
 
 [vaatimusmäärittely](opintoseuranta/dokumentaatio/vaatimusmaarittely.md)
+
 [tuntikirjanpito](opintoseuranta/dokumentaatio/tuntikirjanpito.md)
