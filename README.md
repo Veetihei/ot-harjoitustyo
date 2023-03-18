@@ -20,3 +20,9 @@ Tänne tulee kurssille tehtävät *laskarit*, sekä lopullinen *harjoitustyö*, 
 [coverage report](laskarit/viikko2/coverage_report_unicafe.png)
 
 Loput tehtävät ilmestyvät tänne pikkuhiljaa
+
+# Opintoseuranta sovellus
+
+## Dokumentaatio
+
+[vaatimusmäärittely](opintoseuranta/dokumentaatio/vaatimusmaarittely.md)
