@@ -19,7 +19,12 @@ Tänne tulee kurssille tehtävät *laskarit*, sekä lopullinen *harjoitustyö*, 
 
 [coverage report](laskarit/viikko2/coverage_report_unicafe.png)
 
-Loput tehtävät ilmestyvät tänne pikkuhiljaa
+### Viikko 3
+[sekvenssikaavio](laskarit/viikko3/sekvenssikaavio.md)
+
+[monopoli](laskarit/viikko3/monopoli.md)
+
+[HSL](laskarit/viikko3/HSL.md)
 
 # Opintoseuranta sovellus
 
