@@ -1,11 +1,13 @@
 from tkinter import ttk, constants
+from services.course_service import course_service
 
 class LoginView:
-    def __init__(self, root, handle_register):
+    def __init__(self, root, handle_register, show_courses_view):
         self._root = root
         self._username_entry = None
         self._password_entry = None
         self._handle_register = handle_register
+        self._show_courses_view = show_courses_view
         self._frame = None
 
         self._initialize()
@@ -50,6 +52,9 @@ class LoginView:
     def _handle_signin(self):
         username_value = self._username_entry.get()
         password_value = self._password_entry.get()
+
+        course_service.login(username_value, password_value)
+        self._show_courses_view()
 
         print(f"Käyttäjätunnus on: {username_value}")
         print(f"Salasana on: {password_value}")

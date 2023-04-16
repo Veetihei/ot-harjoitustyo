@@ -1,11 +1,13 @@
 from tkinter import ttk, constants
+from services.course_service import course_service
 
 class RegisterView:
-    def __init__(self, root, handle_signin):
+    def __init__(self, root, handle_signin, handle_register):
         self._root = root
         self._username_entry = None
         self._password_entry = None
         self._handle_signin = handle_signin
+        self._handle_register = handle_register
         self._frame = None
 
         self._initialize()
@@ -24,7 +26,7 @@ class RegisterView:
         login_button = ttk.Button(
             master=self._frame, 
             text="Rekisteröidy",
-            command=self._handle_register
+            command=self._register_handler
         )
 
         register_button = ttk.Button(
@@ -47,9 +49,16 @@ class RegisterView:
 
         self._root.grid_columnconfigure(1, weight=10, minsize=300)
 
-    def _handle_register(self):
+    def _register_handler(self):
         username_value = self._username_entry.get()
         password_value = self._password_entry.get()
+
+
+        if len(username_value) < 2 or len(password_value) < 2:
+            return
+            
+        course_service.register(username_value, password_value)
+        self._handle_register()
 
         print(f"Uusi käyttäjätunnus on: {username_value}")
         print(f"Uusi salasana on: {password_value}")

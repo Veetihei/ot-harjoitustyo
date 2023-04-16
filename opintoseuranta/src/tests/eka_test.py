@@ -1,5 +1,5 @@
 import unittest
-from courses import Student, Course
+from entities.courses import Student, Course
 
 class TestCourses(unittest.TestCase):
     def setUp(self):
