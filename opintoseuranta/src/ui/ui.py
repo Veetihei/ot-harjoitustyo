@@ -1,26 +1,46 @@
-from tkinter import ttk, constants
+from tkinter import Tk, ttk, constants
+from ui.login_view import LoginView
+from ui.register_view import RegisterView
 
 class UI:
     def __init__(self, root):
         self._root = root
-    
+        self._current_view = None
+
     def start(self):
-        heading_label = ttk.Label(master=self._root, text="Tervetuloa! Kirjaudu sisään")
+        self._show_login_view()
 
-        username_label = ttk.Label(master=self._root, text="Käyttäjätunnus")
-        username_entry = ttk.Entry(master=self._root)
+    def _hide_current_view(self):
+        if self._current_view:
+            self._current_view.destroy()
+        
+        self._current_view = None
 
-        password_label = ttk.Label(master=self._root, text="Salasana")
-        password_entry = ttk.Entry(master=self._root)
+    def _handle_register(self):
+        self._show_register_view()
 
-        login_button = ttk.Button(master=self._root, text="Kirjaudu")
+    def _handle_signin(self):
+        self._show_login_view()
 
-        heading_label.grid(row=0, column=0, columnspan=2)
 
-        username_label.grid(row=1, column=0)
-        username_entry.grid(row=1, column=1)
+    def _show_login_view(self):
+        self._hide_current_view()
 
-        password_label.grid(row=2, column=0)
-        password_entry.grid(row=2, column=1)
+        self._current_view = LoginView(
+            self._root,
+            self._handle_register
+        )
 
-        login_button.grid(row=3, column=0, columnspan=2)
+        self._current_view.pack()
+
+    def _show_register_view(self):
+        self._hide_current_view()
+
+        self._current_view = RegisterView(
+            self._root,
+            self._handle_signin
+        )
+
+        self._current_view.pack()
+
+
