@@ -11,3 +11,5 @@
 - Tehty course_service luokka sovelluslogiikalle
 - Testattu käyttäjään liittyvät tietokantakyselyt ja tallennukset
 - lisätty pylint ja korjattu pylintin avulla koodia
+- Tietokantaan voi lisätä kursseja käyttöliittymän kautta
+- Käyttäjä näkee suorittamat kurssinsa
