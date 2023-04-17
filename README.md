@@ -18,33 +18,32 @@ Opintoseuranta sovelluksen avulla voi pitää kirjaa omista opinnoistaan. Sovell
 
 Aloita asentamalla sovelluksen riippuvuudet komennolla:
 
-'''console
+```console
 poetry install
-'''
+```
 
 Seuraavaksi alustetaan tietokanta komennolla:
 
-'''console
+```console
 poetry run invoke build
-'''
+```
 
 Nyt sovelluksen voi käynnistää komennolla:
 
-'''console
+```console
 poetry run invoke start
-'''
+```
 
 ## Sovelluksen testaus
 
 Sovelluksen testit pystyy suorittamaan komennolla:
 
-'''console
+```console
 poetry run invoke test
-'''
+```
 
 Testikattavuusraportin saa komennolla
 
-'''console
+```console
 poetry run invoke coverage-report
-'''
-
+```
