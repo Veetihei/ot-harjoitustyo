@@ -13,3 +13,6 @@
 - lisätty pylint ja korjattu pylintin avulla koodia
 - Tietokantaan voi lisätä kursseja käyttöliittymän kautta
 - Käyttäjä näkee suorittamat kurssinsa
+- Käyttäjä pystyy poistamaan suorittamansa kurssin
+- Käyttäjä pystyy muokata olemassa olevia kursseja
+- Testattu kurssien lisäämistä ja poistamista

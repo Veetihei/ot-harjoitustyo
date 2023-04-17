@@ -11,4 +11,4 @@ Tuntien summa: 28
 | 16.4. | 9 | Graafinen käyttöliittymä, tietokanta, sovellusarkkitehtuuri ja käyttäjien lisäys |
 | 17.4. | 3 | testien päivittäminen |
 | 17.4. | 7 | Käyttäjä voi lisätä kursseja tietokantaan, ja nähdä suorittamat kurssit |
-
+| 17.4. | 4 | Käyttäjälle oikeus muokata ja poistaa kursseja |
