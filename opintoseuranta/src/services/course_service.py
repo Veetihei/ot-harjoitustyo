@@ -27,8 +27,8 @@ class CourseService:
 
         if user and user.password == password:
             self._user = user
-            print("Kirjauduttu")
+            #print("Kirjauduttu")
             return user
-        print("Väärä tunnus")
+        return None
 
 course_service = CourseService()

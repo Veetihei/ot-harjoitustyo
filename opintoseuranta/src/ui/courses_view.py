@@ -1,4 +1,5 @@
 from tkinter import ttk, constants
+from services.course_service import course_service
 
 class CoursesView:
     def __init__(self, root):

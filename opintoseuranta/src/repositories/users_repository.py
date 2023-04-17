@@ -16,7 +16,6 @@ class UserRepository:
         rows = cursor.fetchall()
         
         return list(map(get_user_by_row, rows))
-        #return [User(row["username"], row["password"]) for row in rows]
     
     def register(self, user):
         cursor = self._connection.cursor()
@@ -33,12 +32,21 @@ class UserRepository:
 
         cursor.execute(
             "select * from users where username = ?",
-            (username,)
+            (username, )
         )
 
         row = cursor.fetchone()
 
         return get_user_by_row(row)
+    
+    def delete_all(self):
+        cursor = self._connection.cursor()
+
+        cursor.execute(
+            "delete from users"
+        )
+
+        self._connection.commit()
 
     
 user_repository = UserRepository(get_database_connection())

@@ -1,8 +1,5 @@
 from invoke import task
 
-@task
-def foo_fee(ctx):
-    print("Bar")
 
 @task
 def start(ctx):
@@ -16,9 +13,21 @@ def test(ctx):
 def coverage(ctx):
     ctx.run("coverage run --branch -m pytest src", pty=True)
 
+@task
+def coverage_print(ctx):
+    ctx.run("coverage report -m", pty=True)
+
 @task(coverage)
 def coverage_report(ctx):
     ctx.run("coverage html", pty=True)
+
+@task
+def open_report(ctx):
+    ctx.run("open htmlcov/index.html", pty=True)
+
+@task
+def commands(ctx):
+    ctx.run("invoke --list", pty=True)
 
 @task
 def build(ctx):
