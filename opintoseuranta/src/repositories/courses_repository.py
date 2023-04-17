@@ -3,19 +3,24 @@ from entities.courses import Course
 
 
 def get_course_by_row(row):
-    return Course(row["username"], row["name"], row["weight"], row["grade"]) if row else None
+    return Course(
+        row["id"],
+        row["username"],
+        row["name"],
+        row["weight"],
+        row["grade"]) if row else None
 
 
 class CourseRepository:
     def __init__(self, connection):
         self._connection = connection
 
-    def add_new_course(self, course):
+    def add_new_course(self, username, name, weight, grade):
         cursor = self._connection.cursor()
 
         cursor.execute(
             "insert into courses (username, name, weight, grade) values (?, ?, ?, ?)",
-            (course.username, course.name, course.weight, course.grade)
+            (username, name, weight, grade)
         )
 
         self._connection.commit()
@@ -27,7 +32,7 @@ class CourseRepository:
         )
         rows = cursor.fetchall()
         return list(map(get_course_by_row, rows))
-    
+
     def delete_all(self):
         cursor = self._connection.cursor()
 
@@ -46,6 +51,15 @@ class CourseRepository:
         )
         rows = cursor.fetchall()
         return list(map(get_course_by_row, rows))
+
+    def delete_course(self, course_id):
+        cursor = self._connection.cursor()
+
+        cursor.execute(
+            "delete from courses where id = ?",
+            (course_id,)
+        )
+        self._connection.commit()
 
 
 course_repository = CourseRepository(get_database_connection())

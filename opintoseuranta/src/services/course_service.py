@@ -1,5 +1,5 @@
 from entities.user import User
-from entities.courses import Course
+#from entities.courses import Course
 
 from repositories.users_repository import (
     user_repository as default_user_repository
@@ -47,11 +47,13 @@ class CourseService:
             return
         if int(value) < 0 or int(value) > 5:
             return
-        self._course_repository.add_new_course(
-            Course(username, name, weight, value))
+        self._course_repository.add_new_course(username, name, weight, value)
 
     def get_courses_by_username(self, username):
         return self._course_repository.find_courses_by_username(username)
+
+    def delete_course(self, course_id):
+        self._course_repository.delete_course(course_id)
 
 
 course_service = CourseService()

@@ -35,10 +35,11 @@ def create_tables(connection):
 
     cursor.execute('''
         create table courses (
+            id integer primary key autoincrement,
             username text,
-            name text primary key,
-            weight,
-            grade
+            name text,
+            weight integer,
+            grade integer
         );
     ''')
 

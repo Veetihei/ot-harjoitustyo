@@ -14,7 +14,7 @@ class TestCourseService(unittest.TestCase):
         course_repository.delete_all()
         self.course_service = CourseService()
         self.user_testaaja = User("testaaja", "salasana")
-        self.course_ohpe = Course(self.user_testaaja.username, "OhPe", 5, 5)
+        self.course_ohpe = Course(1, self.user_testaaja.username, "OhPe", 5, 5)
 
     def test_course_service_test_works(self):
         self.assertEqual("Hello world!", "Hello world!")
@@ -72,7 +72,7 @@ class TestCourseService(unittest.TestCase):
     def test_add_course_short_name(self):
         self.course_service.add_new_course(
             self.user_testaaja.username,
-            "AI",
+            "A",
             self.course_ohpe.weight,
             self.course_ohpe.grade
         )
@@ -97,7 +97,8 @@ class TestCourseService(unittest.TestCase):
             self.course_ohpe.grade
         )
 
-        courses = self.course_service.get_courses_by_username(self.user_testaaja.username)
+        courses = self.course_service.get_courses_by_username(
+            self.user_testaaja.username)
         self.assertEqual(len(courses), 1)
         self.assertEqual(courses[0].name, "OhPe")
 
@@ -106,7 +107,7 @@ class TestCourseService(unittest.TestCase):
             self.user_testaaja.username,
             self.user_testaaja.password
         )
-       
+
         self.course_service.login(
             self.user_testaaja.username,
             self.user_testaaja.password
@@ -115,3 +116,23 @@ class TestCourseService(unittest.TestCase):
         user = self.course_service.get_current_user()
 
         self.assertEqual(user.username, self.user_testaaja.username)
+
+    def test_delete_course(self):
+        self.course_service.add_new_course(
+            self.user_testaaja.username,
+            self.course_ohpe.name,
+            self.course_ohpe.weight,
+            self.course_ohpe.grade
+        )
+
+        courses = self.course_service.get_courses_by_username(
+            self.user_testaaja.username)
+        self.assertEqual(len(courses), 1)
+
+        course_id = courses[0].id
+
+        self.course_service.delete_course(course_id)
+
+        courses = self.course_service.get_courses_by_username(
+            self.user_testaaja.username)
+        self.assertEqual(len(courses), 0)

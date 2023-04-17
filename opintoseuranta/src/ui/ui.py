@@ -3,6 +3,7 @@ from ui.login_view import LoginView
 from ui.register_view import RegisterView
 from ui.courses_view import CoursesView
 from ui.add_course_view import AddCourseView
+from ui.edit_course_view import EditCourseView
 
 
 class UI:
@@ -37,14 +38,30 @@ class UI:
         self._current_view = CoursesView(
             self._root,
             self._show_login_view,
-            self._show_add_course_view
+            self._show_add_course_view,
+            self._show_edit_course_view,
+            self._reload_courses_view
         )
 
         self._current_view.pack()
 
+    def _reload_courses_view(self):
+        self._show_courses_view()
+
+    def _show_edit_course_view(self, course):
+        self._hide_current_view()
+        self._root.geometry("800x300")
+
+        self._current_view = EditCourseView(
+            self._root,
+            course,
+            self._show_courses_view
+        )
+        self._current_view.pack()
+
     def _show_register_view(self):
         self._hide_current_view()
-        self._root.geometry("400x200")
+        self._root.geometry("600x200")
 
         self._current_view = RegisterView(
             self._root,
