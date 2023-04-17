@@ -14,6 +14,8 @@ Opintoseuranta sovelluksen avulla voi pitää kirjaa omista opinnoistaan. Sovell
 
 [Changelog](opintoseuranta/dokumentaatio/changelog.md)
 
+[Arkkitehtuuri](opintoseuranta/dokumentaatio/arkkitehtuuri.md)
+
 ## Sovelluksen käyttäminen
 
 Aloita asentamalla sovelluksen riippuvuudet komennolla:

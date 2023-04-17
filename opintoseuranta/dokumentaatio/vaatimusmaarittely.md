@@ -6,14 +6,14 @@ Opintoseuranta sovelluksessa voi seurata omien opintojen edistymistä ja niissä
 
 ## Käyttäjät
 
-Sovelluksessa on aluksi vain yhdenlaisia käyttäjiä, oppilaita.
+Sovelluksessa on aluksi vain yhdenlaisia käyttäjiä, oppilaita. TEHTY
 
 ## Perusversion tarjoama toiminnallisuus
 
 ### Ennen kirjautumista
 
-- Käyttäjä voi luoda järjestelmään tunnuksen
-- Käyttäjä voi kirjautua sisään jo olemassa olevilla tunnuksilla
+- Käyttäjä voi luoda järjestelmään tunnuksen TEHTY
+- Käyttäjä voi kirjautua sisään jo olemassa olevilla tunnuksilla TEHTY
 
 ### Kirjautuneen opiskelijan toiminnallisuudet
 

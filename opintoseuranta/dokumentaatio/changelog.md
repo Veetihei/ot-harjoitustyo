@@ -10,3 +10,4 @@
 - Toteutettu sovellukselle tietokanta ja sitä käyttävät repository luokat
 - Tehty course_service luokka sovelluslogiikalle
 - Testattu käyttäjään liittyvät tietokantakyselyt ja tallennukset
+- lisätty pylint ja korjattu pylintin avulla koodia
