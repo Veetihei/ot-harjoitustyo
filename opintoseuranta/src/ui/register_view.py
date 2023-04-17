@@ -60,6 +60,7 @@ class RegisterView:
         username_value = self._username_entry.get()
         password_value = self._password_entry.get()
 
+        #Siirrä serviceen
         if len(username_value) < 2 or len(password_value) < 2:
             return
 

@@ -5,6 +5,7 @@ from services.course_service import course_service
 class CoursesView:
     def __init__(self, root, _handle_logout, _handle_add_course):
         self._root = root
+        self._user = course_service.get_current_user()
         self._handle_logout = _handle_logout
         self._handle_add_course = _handle_add_course
         self._initialize()
@@ -15,6 +16,8 @@ class CoursesView:
         heading_label = ttk.Label(
             master=self._frame, text="Täältä näet kurssit")
         
+        #print("Sisällä:", course_service.get_current_user())
+
         logout_button = ttk.Button(
             master=self._frame,
             text="Kirjaudu ulos",

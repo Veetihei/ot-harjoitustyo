@@ -1,7 +1,7 @@
 
 class Course:
-    def __init__(self, student_name, name, points, grade):
-        self.student_name = student_name
+    def __init__(self, username, name, weight, grade):
+        self.username = username
         self.name = name
-        self.points = points
+        self.weight = weight
         self.grade = grade

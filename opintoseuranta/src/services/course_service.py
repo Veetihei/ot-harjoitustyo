@@ -1,5 +1,5 @@
 from entities.user import User
-# from entities.courses import Course
+from entities.courses import Course
 
 from repositories.users_repository import (
     user_repository as default_user_repository
@@ -35,6 +35,13 @@ class CourseService:
             # print("Kirjauduttu")
             return user
         return None
-
+    
+    def get_current_user(self):
+        return self._user
+    
+    def add_new_course(self, username, name, weight, value):
+        #Virheiden käsittely tähän
+        course = self._course_repository.add_new_course(Course(username, name, weight, value))
+        return
 
 course_service = CourseService()

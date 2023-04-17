@@ -10,6 +10,13 @@ def drop_tables(connection):
 
     connection.commit()
 
+    cursor = connection.cursor()
+
+    cursor.execute('''
+        drop table if exists courses;
+    ''')
+
+    connection.commit()
 
 def create_tables(connection):
     cursor = connection.cursor()
@@ -18,11 +25,23 @@ def create_tables(connection):
         create table users (
             username text primary key,
             password text
-        )
+        );
     ''')
 
     connection.commit()
 
+    cursor = connection.cursor()
+
+    cursor.execute('''
+        create table courses (
+            username text,
+            name text primary key,
+            weight,
+            grade
+        );
+    ''')
+
+    connection.commit()
 
 def initialize_database():
     connection = get_database_connection()
