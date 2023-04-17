@@ -10,6 +10,7 @@ class Student:
             grades += course.points * course.grade
         return grades / points
 
+
 class Course:
     def __init__(self, student_name, name, points, grade):
         self.student_name = student_name

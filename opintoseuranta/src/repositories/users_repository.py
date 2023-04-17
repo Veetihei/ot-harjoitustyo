@@ -1,8 +1,10 @@
 from database_connection import get_database_connection
 from entities.user import User
 
+
 def get_user_by_row(row):
     return User(row["username"], row["password"]) if row else None
+
 
 class UserRepository:
     def __init__(self, connection):
@@ -46,5 +48,6 @@ class UserRepository:
 
         self._connection.commit()
 
+
 user_repository = UserRepository(get_database_connection())
-#users = user_repository.find_all()
+# users = user_repository.find_all()

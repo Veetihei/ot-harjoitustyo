@@ -3,6 +3,7 @@ from ui.login_view import LoginView
 from ui.register_view import RegisterView
 from ui.courses_view import CoursesView
 
+
 class UI:
     def __init__(self, root):
         self._root = root
@@ -14,7 +15,7 @@ class UI:
     def _hide_current_view(self):
         if self._current_view:
             self._current_view.destroy()
-        
+
         self._current_view = None
 
     def _handle_register(self):
@@ -22,7 +23,6 @@ class UI:
 
     def _handle_signin(self):
         self._show_login_view()
-
 
     def _show_login_view(self):
         self._hide_current_view()
@@ -54,5 +54,3 @@ class UI:
         )
 
         self._current_view.pack()
-
-
