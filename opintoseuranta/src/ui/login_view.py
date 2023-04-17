@@ -3,12 +3,12 @@ from services.course_service import course_service
 
 
 class LoginView:
-    def __init__(self, root, handle_register, show_courses_view):
+    def __init__(self, root, handle_register, handle_signin):
         self._root = root
         self._username_entry = None
         self._password_entry = None
         self._handle_register = handle_register
-        self._show_courses_view = show_courses_view
+        self._handle_signin = handle_signin
         self._frame = None
 
         self._initialize()
@@ -28,7 +28,7 @@ class LoginView:
         login_button = ttk.Button(
             master=self._frame,
             text="Kirjaudu",
-            command=self._handle_signin
+            command=self._signin_handler
         )
 
         register_button = ttk.Button(
@@ -56,15 +56,15 @@ class LoginView:
 
         self._root.grid_columnconfigure(1, weight=10, minsize=300)
 
-    def _handle_signin(self):
+    def _signin_handler(self):
         username_value = self._username_entry.get()
         password_value = self._password_entry.get()
 
-        course_service.login(username_value, password_value)
-        self._show_courses_view()
+        if course_service.login(username_value, password_value) is not None:
+            self._handle_signin()
 
-        print(f"Käyttäjätunnus on: {username_value}")
-        print(f"Salasana on: {password_value}")
+        #print(f"Käyttäjätunnus on: {username_value}")
+        #print(f"Salasana on: {password_value}")
 
     def pack(self):
         self._frame.pack(fill=constants.X)
