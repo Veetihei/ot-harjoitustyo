@@ -63,8 +63,8 @@ class LoginView:
         if course_service.login(username_value, password_value) is not None:
             self._handle_signin()
 
-        #print(f"Käyttäjätunnus on: {username_value}")
-        #print(f"Salasana on: {password_value}")
+        # print(f"Käyttäjätunnus on: {username_value}")
+        # print(f"Salasana on: {password_value}")
 
     def pack(self):
         self._frame.pack(fill=constants.X)

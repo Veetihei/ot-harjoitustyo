@@ -35,16 +35,23 @@ class CourseService:
             # print("Kirjauduttu")
             return user
         return None
-    
+
     def get_current_user(self):
         return self._user
-    
+
     def add_new_course(self, username, name, weight, value):
-        #Virheiden käsittely tähän
-        course = self._course_repository.add_new_course(Course(username, name, weight, value))
-        return
-    
+        # Virheiden käsittely tähän
+        if len(name) < 3:
+            return
+        if int(weight) < 0:
+            return
+        if int(value) < 0 or int(value) > 5:
+            return
+        self._course_repository.add_new_course(
+            Course(username, name, weight, value))
+
     def get_courses_by_username(self, username):
         return self._course_repository.find_courses_by_username(username)
+
 
 course_service = CourseService()

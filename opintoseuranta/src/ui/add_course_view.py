@@ -23,10 +23,12 @@ class AddCourseView:
         course_name_label = ttk.Label(master=self._frame, text="Kurssin Nimi:")
         self._course_name_entry = ttk.Entry(master=self._frame)
 
-        course_weight_label = ttk.Label(master=self._frame, text="Kurssin opintopisteet")
+        course_weight_label = ttk.Label(
+            master=self._frame, text="Kurssin opintopisteet")
         self._course_weight_entry = ttk.Entry(master=self._frame)
 
-        course_grade_label = ttk.Label(master=self._frame, text="Kurssin arvosana")
+        course_grade_label = ttk.Label(
+            master=self._frame, text="Kurssin arvosana")
         self._course_grade_entry = ttk.Entry(master=self._frame)
 
         add_course_button = ttk.Button(
@@ -51,7 +53,7 @@ class AddCourseView:
         course_weight_label.grid(row=1, column=3, padx=5, pady=5)
         self._course_weight_entry.grid(row=2, column=3, sticky=(
             constants.E, constants.W), padx=5, pady=5)
-        
+
         course_grade_label.grid(row=1, column=6, padx=5, pady=5)
         self._course_grade_entry.grid(row=2, column=6, sticky=(
             constants.E, constants.W), padx=5, pady=5)
@@ -73,8 +75,8 @@ class AddCourseView:
         try:
             course_service.add_new_course(
                 user_name,
-                course_name_value, 
-                course_weight_value, 
+                course_name_value,
+                course_weight_value,
                 course_grade_value
             )
             self._handle_cancel()
