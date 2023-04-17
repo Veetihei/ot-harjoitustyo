@@ -2,34 +2,49 @@
 
 Tämä on helsingin yliopiston ohjelmistotekniikka-kurssille tehty palautuskansio.
 
-Tänne tulee kurssille tehtävät *laskarit*, sekä lopullinen *harjoitustyö*, eli **tämä ei ole lopullinen versio**
-
-## Tehtävät
-
-#### Viikko 1
-
-[gitlog.txt](laskarit/viikko1/gitlog.txt)
-
-[komentorivi.txt](laskarit/viikko1/komentorivi.txt)
-
-#### Viikko 2
-[unicafe](laskarit/viikko2/unicafe)
-
-[maksukortti](laskarit/viikko2/maksukortti)
-
-[coverage report](laskarit/viikko2/coverage_report_unicafe.png)
-
-### Viikko 3
-[sekvenssikaavio](laskarit/viikko3/sekvenssikaavio.md)
-
-[monopoli](laskarit/viikko3/monopoli.md)
-
-[HSL](laskarit/viikko3/HSL.md)
-
 # Opintoseuranta sovellus
+
+Opintoseuranta sovelluksen avulla voi pitää kirjaa omista opinnoistaan. Sovellukseen voi lisätä suorittamia kursseja, sekä muokata jo suoritettuja kursseja. Sovellus näyttää käyttäjällä, kuinka monta opintopistettä hän on suorittanut, millä keskiarvolla, sekä listan kaikista suorituksista. Sovellukseen voi kirjautua olemassa oolevalla käyttäjällä tai rekisteröityä uutena käyttäjänä.
 
 ## Dokumentaatio
 
 [vaatimusmäärittely](opintoseuranta/dokumentaatio/vaatimusmaarittely.md)
 
 [tuntikirjanpito](opintoseuranta/dokumentaatio/tuntikirjanpito.md)
+
+[Changelog](opintoseuranta/dokumentaatio/changelog.md)
+
+## Sovelluksen käyttäminen
+
+Aloita asentamalla sovelluksen riippuvuudet komennolla:
+
+'''console
+poetry install
+'''
+
+Seuraavaksi alustetaan tietokanta komennolla:
+
+'''console
+poetry run invoke build
+'''
+
+Nyt sovelluksen voi käynnistää komennolla:
+
+'''console
+poetry run invoke start
+'''
+
+## Sovelluksen testaus
+
+Sovelluksen testit pystyy suorittamaan komennolla:
+
+'''console
+poetry run invoke test
+'''
+
+Testikattavuusraportin saa komennolla
+
+'''console
+poetry run invoke coverage-report
+'''
+
