@@ -69,7 +69,6 @@ class AddCourseView:
         course_name_value = self._course_name_entry.get()
         course_weight_value = self._course_weight_entry.get()
         course_grade_value = self._course_grade_entry.get()
-        print(user_name)
 
         try:
             course_service.add_new_course(

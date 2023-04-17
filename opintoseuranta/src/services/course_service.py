@@ -43,5 +43,8 @@ class CourseService:
         #Virheiden käsittely tähän
         course = self._course_repository.add_new_course(Course(username, name, weight, value))
         return
+    
+    def get_courses_by_username(self, username):
+        return self._course_repository.find_courses_by_username(username)
 
 course_service = CourseService()
