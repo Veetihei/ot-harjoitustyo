@@ -13,7 +13,7 @@ class TestCourseRepository(unittest.TestCase):
 
     def test_add_new_course(self):
         course_repository.add_new_course(
-            self.course_ohpe.username, 
+            self.course_ohpe.username,
             self.course_ohpe.name,
             self.course_ohpe.weight,
             self.course_ohpe.grade
@@ -25,13 +25,13 @@ class TestCourseRepository(unittest.TestCase):
 
     def test_find_courses_by_username(self):
         course_repository.add_new_course(
-            self.course_ohpe.username, 
+            self.course_ohpe.username,
             self.course_ohpe.name,
             self.course_ohpe.weight,
             self.course_ohpe.grade
         )
         course_repository.add_new_course(
-            self.course_tito.username, 
+            self.course_tito.username,
             self.course_tito.name,
             self.course_tito.weight,
             self.course_tito.grade
@@ -47,7 +47,7 @@ class TestCourseRepository(unittest.TestCase):
 
     def test_delete_course_by_id(self):
         course_repository.add_new_course(
-            self.course_ohpe.username, 
+            self.course_ohpe.username,
             self.course_ohpe.name,
             self.course_ohpe.weight,
             self.course_ohpe.grade
@@ -62,5 +62,3 @@ class TestCourseRepository(unittest.TestCase):
 
         courses = course_repository.find_all()
         self.assertEqual(len(courses), 0)
-
-

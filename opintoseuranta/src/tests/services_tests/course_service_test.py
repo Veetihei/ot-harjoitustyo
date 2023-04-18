@@ -15,6 +15,8 @@ class TestCourseService(unittest.TestCase):
         self.course_service = CourseService()
         self.user_testaaja = User("testaaja", "salasana")
         self.course_ohpe = Course(1, self.user_testaaja.username, "OhPe", 5, 5)
+        self.course_tito = Course(2, self.user_testaaja.username, "TiTo", 5, 2)
+        self.course_ohte = Course(3, self.user_testaaja.username, "OhTe", 5, 5)
 
     def test_course_service_test_works(self):
         self.assertEqual("Hello world!", "Hello world!")
@@ -136,3 +138,96 @@ class TestCourseService(unittest.TestCase):
         courses = self.course_service.get_courses_by_username(
             self.user_testaaja.username)
         self.assertEqual(len(courses), 0)
+
+    def test_get_mean_grade(self):
+        self.course_service.add_new_course(
+            self.user_testaaja.username,
+            self.course_ohpe.name,
+            self.course_ohpe.weight,
+            self.course_ohpe.grade
+        )
+        self.course_service.add_new_course(
+            self.user_testaaja.username,
+            self.course_tito.name,
+            self.course_tito.weight,
+            self.course_tito.grade
+        )
+
+        mean_grade = self.course_service.get_course_stats(
+            self.user_testaaja.username)[0]
+
+        self.assertEqual(mean_grade, 3.5)
+
+        self.course_service.add_new_course(
+            self.user_testaaja.username,
+            self.course_ohte.name,
+            self.course_ohte.weight,
+            self.course_ohte.grade
+        )
+
+        mean_grade = self.course_service.get_course_stats(
+            self.user_testaaja.username)[0]
+
+        self.assertEqual(mean_grade, 4)
+
+    def test_get_course_weights(self):
+        self.course_service.add_new_course(
+            self.user_testaaja.username,
+            self.course_ohpe.name,
+            self.course_ohpe.weight,
+            self.course_ohpe.grade
+        )
+        self.course_service.add_new_course(
+            self.user_testaaja.username,
+            self.course_tito.name,
+            self.course_tito.weight,
+            self.course_tito.grade
+        )
+
+        courses_weight = self.course_service.get_course_stats(
+            self.user_testaaja.username)[1]
+
+        self.assertEqual(courses_weight, 10)
+
+        self.course_service.add_new_course(
+            self.user_testaaja.username,
+            self.course_ohte.name,
+            self.course_ohte.weight,
+            self.course_ohte.grade
+        )
+
+        courses_weight = self.course_service.get_course_stats(
+            self.user_testaaja.username)[1]
+
+        self.assertEqual(courses_weight, 15)
+
+    def test_get_courses_number(self):
+        self.course_service.add_new_course(
+            self.user_testaaja.username,
+            self.course_ohpe.name,
+            self.course_ohpe.weight,
+            self.course_ohpe.grade
+        )
+        self.course_service.add_new_course(
+            self.user_testaaja.username,
+            self.course_tito.name,
+            self.course_tito.weight,
+            self.course_tito.grade
+        )
+
+        courses_num = self.course_service.get_course_stats(
+            self.user_testaaja.username)[2]
+
+        self.assertEqual(courses_num, 2)
+
+        self.course_service.add_new_course(
+            self.user_testaaja.username,
+            self.course_ohte.name,
+            self.course_ohte.weight,
+            self.course_ohte.grade
+        )
+
+        courses_num = self.course_service.get_course_stats(
+            self.user_testaaja.username)[2]
+
+        self.assertEqual(courses_num, 3)

@@ -1,5 +1,5 @@
 from entities.user import User
-#from entities.courses import Course
+# from entities.courses import Course
 
 from repositories.users_repository import (
     user_repository as default_user_repository
@@ -66,7 +66,6 @@ class CourseService:
             courses_number += 1
         grade_mean = grade_sum / weight_sum
         return grade_mean, weight_sum, courses_number
-        
 
 
 course_service = CourseService()

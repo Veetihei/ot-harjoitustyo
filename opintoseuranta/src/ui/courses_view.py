@@ -26,11 +26,10 @@ class CoursesView:
         stat_info = ttk.Label(master=course_stat, text=info)
         course_stat.grid(row=2, column=column, padx=5, pady=5)
         stat_info.grid(padx=5, pady=5)
-        
-
 
     def _course_stat_handler(self):
-        mean_grade, weight_sum, course_num = course_service.get_course_stats(self._user.username)
+        mean_grade, weight_sum, course_num = course_service.get_course_stats(
+            self._user.username)
         self._course_stat_box("Keskiarvo", "{:.2f}".format(mean_grade), 0)
         self._course_stat_box("Opintopisteet", weight_sum, 2)
         self._course_stat_box("Suoritukset", course_num, 4)

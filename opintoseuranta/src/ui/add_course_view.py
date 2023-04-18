@@ -81,7 +81,7 @@ class AddCourseView:
             )
             self._handle_cancel()
         except:
-            #print("Kurssin lisäys ei onnistunut")
+            # print("Kurssin lisäys ei onnistunut")
             self._handle_cancel()
 
     def pack(self):
