@@ -18,3 +18,4 @@
 - Testattu kurssien lisäämistä ja poistamista
 - Lisätty näkymä kurssien yhteenvedosta
 - Testattu uusia ominaisuuksia
+- Sovelluksen konfiguraatiot lisätty
