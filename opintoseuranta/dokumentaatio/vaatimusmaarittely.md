@@ -19,7 +19,7 @@ Sovelluksessa on aluksi vain yhdenlaisia käyttäjiä, oppilaita. TEHTY
 
 - Opiskelija voi lisätä uuden kurssin suoritetuksi, ja merkitä kurssin opintopisteet ja arvosanan TEHTY
 - Opiskelija voi muokata jo suoritetun kurssin arvosanaa TEHTY
-- Opiskelija näkee monta kurssia ja opintopistettä on suorittanut, sekä arvosanan suoritetuista kursseista
+- Opiskelija näkee monta kurssia ja opintopistettä on suorittanut, sekä arvosanan suoritetuista kursseista TEHTYs
 - Opiskelija näkee myös yksittäiset suoritukset TEHTY
 
 ## Jatkokehitysideoita

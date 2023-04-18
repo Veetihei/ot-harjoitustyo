@@ -16,3 +16,5 @@
 - Käyttäjä pystyy poistamaan suorittamansa kurssin
 - Käyttäjä pystyy muokata olemassa olevia kursseja
 - Testattu kurssien lisäämistä ja poistamista
+- Lisätty näkymä kurssien yhteenvedosta
+- Testattu uusia ominaisuuksia

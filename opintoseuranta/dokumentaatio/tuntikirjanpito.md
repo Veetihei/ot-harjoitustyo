@@ -12,3 +12,4 @@ Tuntien summa: 28
 | 17.4. | 3 | testien päivittäminen |
 | 17.4. | 7 | Käyttäjä voi lisätä kursseja tietokantaan, ja nähdä suorittamat kurssit |
 | 17.4. | 4 | Käyttäjälle oikeus muokata ja poistaa kursseja |
+| 18.4. | 4 | Käyttäjälle lisätty näkymä kurssien keskiarvosta ja suorituksista |
