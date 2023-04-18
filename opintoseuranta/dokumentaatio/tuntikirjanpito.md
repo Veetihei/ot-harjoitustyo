@@ -1,6 +1,6 @@
 # Tuntikirjanpito
 
-Tuntien summa: 28
+Tuntien summa: 36
 
 | Päivä | Tunnit | Mitä tehty |
 | :----| :----| :----|
