@@ -64,7 +64,10 @@ class CourseService:
             weight_sum += course.weight
             grade_sum += course.grade * course.weight
             courses_number += 1
-        grade_mean = grade_sum / weight_sum
+        if weight_sum != 0:
+            grade_mean = grade_sum / weight_sum
+        else:
+            grade_mean = 0
         return grade_mean, weight_sum, courses_number
 
 
