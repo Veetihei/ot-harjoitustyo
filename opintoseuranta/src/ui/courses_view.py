@@ -21,12 +21,26 @@ class CoursesView:
     def _logout_handler(self):
         self._handle_logout()
 
+    def _course_stat_box(self, title, info, column):
+        course_stat = ttk.LabelFrame(master=self._frame, text=title)
+        stat_info = ttk.Label(master=course_stat, text=info)
+        course_stat.grid(row=2, column=column, padx=5, pady=5)
+        stat_info.grid(padx=5, pady=5)
+        
+
+
+    def _course_stat_handler(self):
+        mean_grade, weight_sum, course_num = course_service.get_course_stats(self._user.username)
+        self._course_stat_box("Keskiarvo", "{:.2f}".format(mean_grade), 0)
+        self._course_stat_box("Opintopisteet", weight_sum, 2)
+        self._course_stat_box("Suoritukset", course_num, 4)
+
     def _course_edit_handler(self, course):
         # course_service.edit_course(course, self._user.username)
         self._handle_edit_course(course)
 
     def _course_delete_handler(self, course_id):
-        print(course_id)
+        # print(course_id)
         course_service.delete_course(course_id)
         self._handle_reload()
 
@@ -36,6 +50,7 @@ class CoursesView:
             text="Kurssin Nimi",
             font=15
         )
+
         course_weight_title = ttk.Label(
             master=self._frame,
             text="Kurssin opintopisteet",
@@ -148,10 +163,13 @@ class CoursesView:
             self._initialize_course(row, course)
 
     def _initialize_header(self):
+
         heading_label = ttk.Label(
             master=self._frame,
             text=f"Tervetuloa {self._user.username}!"
         )
+
+        self._course_stat_handler()
 
         logout_button = ttk.Button(
             master=self._frame,
@@ -163,6 +181,7 @@ class CoursesView:
             text="Lisää kurssi",
             command=self._handle_add_course
         )
+
         heading_label.grid(
             row=0,
             column=0,
@@ -173,7 +192,7 @@ class CoursesView:
         )
 
         logout_button.grid(
-            row=4,
+            row=7,
             column=0,
             columnspan=2,
             sticky=(constants.E, constants.W),
@@ -182,7 +201,7 @@ class CoursesView:
         )
 
         add_course_button.grid(
-            row=4,
+            row=7,
             column=3,
             columnspan=2,
             sticky=(constants.E, constants.W),
@@ -195,7 +214,7 @@ class CoursesView:
 
         self._initialize_header()
 
-        row = 5
+        row = 8
         self._initialize_courses(row)
 
         self._root.grid_columnconfigure(1, weight=10, minsize=300)

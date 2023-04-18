@@ -55,5 +55,18 @@ class CourseService:
     def delete_course(self, course_id):
         self._course_repository.delete_course(course_id)
 
+    def get_course_stats(self, username):
+        courses = self.get_courses_by_username(username)
+        weight_sum = 0
+        grade_sum = 0
+        courses_number = 0
+        for course in courses:
+            weight_sum += course.weight
+            grade_sum += course.grade * course.weight
+            courses_number += 1
+        grade_mean = grade_sum / weight_sum
+        return grade_mean, weight_sum, courses_number
+        
+
 
 course_service = CourseService()

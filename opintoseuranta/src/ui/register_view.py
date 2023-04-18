@@ -67,8 +67,8 @@ class RegisterView:
         course_service.register(username_value, password_value)
         self._handle_register()
 
-        print(f"Uusi käyttäjätunnus on: {username_value}")
-        print(f"Uusi salasana on: {password_value}")
+        # print(f"Uusi käyttäjätunnus on: {username_value}")
+        # print(f"Uusi salasana on: {password_value}")
 
     def pack(self):
         self._frame.pack(fill=constants.X)

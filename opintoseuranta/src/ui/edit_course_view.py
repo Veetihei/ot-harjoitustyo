@@ -152,8 +152,6 @@ class EditCourseView:
         cancel_button.grid(row=6, column=2, columnspan=2, sticky=(
             constants.E, constants.W), padx=5, pady=5)
 
-        self._root.grid_columnconfigure(1, weight=10, minsize=300)
-
     def _edit_course_handler(self):
         user_name = self._user.username
 
@@ -177,18 +175,6 @@ class EditCourseView:
             course_grade_value
         )
         self._handle_cancel()
-
-        # try:
-        #     course_service.add_new_course(
-        #         user_name,
-        #         course_name_value,
-        #         course_weight_value,
-        #         course_grade_value
-        #     )
-        #     self._handle_cancel()
-        # except:
-        #     print("Kurssin lisäys ei onnistunut")
-        #     self._handle_cancel()
 
     def pack(self):
         self._frame.pack(fill=constants.X)
