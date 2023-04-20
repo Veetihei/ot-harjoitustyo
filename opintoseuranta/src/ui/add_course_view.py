@@ -3,13 +3,15 @@ from services.course_service import course_service
 
 
 class AddCourseView:
-    def __init__(self, root, handle_cancel):
+    def __init__(self, root, handle_cancel, handle_error, memory):
         self._root = root
         self._user = course_service.get_current_user()
         self._course_name_entry = None
         self._course_weight_entry = None
         self._course_grade_entry = None
         self._handle_cancel = handle_cancel
+        self._handle_error = handle_error
+        self._memory = memory
         self._frame = None
 
         self._initialize()
@@ -72,17 +74,17 @@ class AddCourseView:
         course_weight_value = self._course_weight_entry.get()
         course_grade_value = self._course_grade_entry.get()
 
-        try:
-            course_service.add_new_course(
-                user_name,
-                course_name_value,
-                course_weight_value,
-                course_grade_value
-            )
+        result = course_service.add_new_course(
+            user_name,
+            course_name_value,
+            course_weight_value,
+            course_grade_value
+        )
+        if result == True:
             self._handle_cancel()
-        except:
+        else:
+            self._handle_error(result, self._memory)
             # print("Kurssin lisäys ei onnistunut")
-            self._handle_cancel()
 
     def pack(self):
         self._frame.pack(fill=constants.X)

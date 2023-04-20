@@ -20,14 +20,14 @@ class CourseService:
         self._course_repository = course_repository
 
     def register(self, username, password, password_check):
-        # Virheiden käsittely tähän
         if len(username) < 3 or len(username) > 10:
             return "Käyttäjätunnuksen on oltava 3-10 merkkiä"
         if password != password_check:
             return "Salasanat eivät täsmää"
         if len(password) < 3 or len(password) > 10:
             return "Salasanan on oltava 3-10 merkkiä"
-        
+        if self._user_repository.find_by_username(username).username == username:
+            return "Käyttäjätunnus on jo olemassa"
         user = self._user_repository.register(User(username, password))
 
         self._user = user
@@ -39,7 +39,6 @@ class CourseService:
 
         if user and user.password == password:
             self._user = user
-            # print("Kirjauduttu")
             return user
         return None
 
@@ -47,14 +46,14 @@ class CourseService:
         return self._user
 
     def add_new_course(self, username, name, weight, value):
-        # Virheiden käsittely tähän
         if len(name) < 3:
-            return
+            return "Kurssin nimi on liian lyhyt"
         if int(weight) < 0:
-            return
-        if int(value) < 0 or int(value) > 5:
-            return
+            return "Opintopisteet eivät voi olla negatiivisia"
+        if int(value) < 1 or int(value) > 5:
+            return "Arvosanan on oltava 1-5 välillä"
         self._course_repository.add_new_course(username, name, weight, value)
+        return True
 
     def get_courses_by_username(self, username):
         return self._course_repository.find_courses_by_username(username)

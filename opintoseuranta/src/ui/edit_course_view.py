@@ -3,7 +3,7 @@ from services.course_service import course_service
 
 
 class EditCourseView:
-    def __init__(self, root, course, handle_cancel):
+    def __init__(self, root, course, handle_cancel, handle_error, memory):
         self._root = root
         self._user = course_service.get_current_user()
         self._course = course
@@ -11,6 +11,8 @@ class EditCourseView:
         self._course_weight_entry = None
         self._course_grade_entry = None
         self._handle_cancel = handle_cancel
+        self._handle_error = handle_error
+        self._memory = memory
         self._frame = None
 
         self._initialize()
@@ -167,14 +169,17 @@ class EditCourseView:
         if len(course_grade_value) == 0:
             course_grade_value = self._course.grade
 
-        course_service.delete_course(self._course.id)
-        course_service.add_new_course(
+        result = course_service.add_new_course(
             user_name,
             course_name_value,
             course_weight_value,
             course_grade_value
         )
-        self._handle_cancel()
+        if result == True:
+            course_service.delete_course(self._course.id)
+            self._handle_cancel()
+        else:
+            self._handle_error(result, self._memory)
 
     def pack(self):
         self._frame.pack(fill=constants.X)

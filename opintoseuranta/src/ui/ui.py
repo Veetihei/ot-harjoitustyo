@@ -56,6 +56,8 @@ class UI:
         self._current_view = EditCourseView(
             self._root,
             course,
+            self._show_courses_view,
+            self._show_error_view,
             self._show_courses_view
         )
         self._current_view.pack()
@@ -68,7 +70,8 @@ class UI:
             self._root,
             self._show_login_view,
             self._show_courses_view,
-            self._show_error_view
+            self._show_error_view,
+            self._show_register_view
         )
 
         self._current_view.pack()
@@ -79,17 +82,19 @@ class UI:
 
         self._current_view = AddCourseView(
             self._root,
-            self._show_courses_view
+            self._show_courses_view,
+            self._show_error_view,
+            self._show_add_course_view
         )
 
         self._current_view.pack()
 
-    def _show_error_view(self, message):
+    def _show_error_view(self, message, previous_page):
         self._hide_current_view()
         self._root.geometry("600x300")
         self._current_view = ErrorView(
             self._root,
-            self._show_login_view,
-            message
+            message,
+            previous_page
         )
         self._current_view.pack()
