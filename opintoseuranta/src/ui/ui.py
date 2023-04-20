@@ -4,6 +4,7 @@ from ui.register_view import RegisterView
 from ui.courses_view import CoursesView
 from ui.add_course_view import AddCourseView
 from ui.edit_course_view import EditCourseView
+from ui.error_view import ErrorView
 
 
 class UI:
@@ -61,12 +62,13 @@ class UI:
 
     def _show_register_view(self):
         self._hide_current_view()
-        self._root.geometry("600x200")
+        self._root.geometry("600x300")
 
         self._current_view = RegisterView(
             self._root,
             self._show_login_view,
-            self._show_courses_view
+            self._show_courses_view,
+            self._show_error_view
         )
 
         self._current_view.pack()
@@ -80,4 +82,14 @@ class UI:
             self._show_courses_view
         )
 
+        self._current_view.pack()
+
+    def _show_error_view(self, message):
+        self._hide_current_view()
+        self._root.geometry("600x300")
+        self._current_view = ErrorView(
+            self._root,
+            self._show_login_view,
+            message
+        )
         self._current_view.pack()

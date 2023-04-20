@@ -19,13 +19,20 @@ class CourseService:
         self._user_repository = user_repository
         self._course_repository = course_repository
 
-    def register(self, username, password):
+    def register(self, username, password, password_check):
         # Virheiden käsittely tähän
+        if len(username) < 3 or len(username) > 10:
+            return "Käyttäjätunnuksen on oltava 3-10 merkkiä"
+        if password != password_check:
+            return "Salasanat eivät täsmää"
+        if len(password) < 3 or len(password) > 10:
+            return "Salasanan on oltava 3-10 merkkiä"
+        
         user = self._user_repository.register(User(username, password))
 
         self._user = user
 
-        return user
+        return True
 
     def login(self, username, password):
         user = self._user_repository.find_by_username(username)
