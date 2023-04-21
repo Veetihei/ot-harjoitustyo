@@ -6,21 +6,21 @@ Opintoseuranta sovelluksessa voi seurata omien opintojen edistymistä ja niissä
 
 ## Käyttäjät
 
-Sovelluksessa on aluksi vain yhdenlaisia käyttäjiä, oppilaita. TEHTY
+Sovelluksessa on vain yhdenlaisia käyttäjiä, oppilaita. (TEHTY)
 
 ## Perusversion tarjoama toiminnallisuus
 
 ### Ennen kirjautumista
 
-- Käyttäjä voi luoda järjestelmään tunnuksen TEHTY
-- Käyttäjä voi kirjautua sisään jo olemassa olevilla tunnuksilla TEHTY
+- Käyttäjä voi luoda järjestelmään uuden tunnuksen (TEHTY)
+- Käyttäjä voi kirjautua sisään jo olemassa olevilla tunnuksilla (TEHTY)
 
 ### Kirjautuneen opiskelijan toiminnallisuudet
 
-- Opiskelija voi lisätä uuden kurssin suoritetuksi, ja merkitä kurssin opintopisteet ja arvosanan TEHTY
-- Opiskelija voi muokata jo suoritetun kurssin arvosanaa TEHTY
-- Opiskelija näkee monta kurssia ja opintopistettä on suorittanut, sekä arvosanan suoritetuista kursseista TEHTYs
-- Opiskelija näkee myös yksittäiset suoritukset TEHTY
+- Opiskelija voi lisätä uuden kurssin suorituksiins, ja merkitä kurssin opintopisteet ja arvosanan (TEHTY)
+- Opiskelija voi muokata jo suoritetun kurssin arvosanaa, nimeä ja opintopisteitä (TEHTY)
+- Opiskelija näkee monta kurssia ja opintopistettä on suorittanut, sekä keskiarvon suoritetuista kursseista (TEHTY)
+- Opiskelija näkee myös yksittäiset suoritukset (TEHTY)
 
 ## Jatkokehitysideoita
 

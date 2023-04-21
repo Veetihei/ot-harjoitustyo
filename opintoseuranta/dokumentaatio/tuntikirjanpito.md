@@ -1,6 +1,6 @@
 # Tuntikirjanpito
 
-Tuntien summa: 36
+Tuntien summa: 46
 
 | Päivä | Tunnit | Mitä tehty |
 | :----| :----| :----|
@@ -14,3 +14,5 @@ Tuntien summa: 36
 | 17.4. | 4 | Käyttäjälle oikeus muokata ja poistaa kursseja |
 | 18.4. | 4 | Käyttäjälle lisätty näkymä kurssien keskiarvosta ja suorituksista |
 | 18.4. | 2 | Sovelluksen konfiguraatioiden lisääminen |
+| 20.4. | 4 | Virheiden käsittelyä |
+| 21.4. | 4 | Lisää virehiden käsittelyä ja niiden testausta |
