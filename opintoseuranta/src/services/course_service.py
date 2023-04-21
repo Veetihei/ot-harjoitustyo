@@ -26,7 +26,10 @@ class CourseService:
             return "Salasanat eivät täsmää"
         if len(password) < 3 or len(password) > 10:
             return "Salasanan on oltava 3-10 merkkiä"
-        if self._user_repository.find_by_username(username).username == username:
+
+        user = self._user_repository.find_by_username(username)
+
+        if user:
             return "Käyttäjätunnus on jo olemassa"
         user = self._user_repository.register(User(username, password))
 
@@ -52,6 +55,12 @@ class CourseService:
             return "Opintopisteet eivät voi olla negatiivisia"
         if int(value) < 1 or int(value) > 5:
             return "Arvosanan on oltava 1-5 välillä"
+        course_exists = self._course_repository.find_by_course_name(
+            name, username)
+
+        if course_exists:
+            return "Kurssi on jo lisätty"
+
         self._course_repository.add_new_course(username, name, weight, value)
         return True
 
@@ -75,6 +84,9 @@ class CourseService:
         else:
             grade_mean = 0
         return grade_mean, weight_sum, courses_number
+
+    def find_all_courses(self):
+        return self._course_repository.find_all()
 
 
 course_service = CourseService()

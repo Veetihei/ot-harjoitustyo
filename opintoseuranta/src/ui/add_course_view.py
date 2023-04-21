@@ -84,7 +84,6 @@ class AddCourseView:
             self._handle_cancel()
         else:
             self._handle_error(result, self._memory)
-            # print("Kurssin lisäys ei onnistunut")
 
     def pack(self):
         self._frame.pack(fill=constants.X)

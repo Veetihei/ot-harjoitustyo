@@ -28,7 +28,7 @@ class CourseRepository:
     def find_all(self):
         cursor = self._connection.cursor()
         cursor.execute(
-            "select * from courses"
+            "select * from courses",
         )
         rows = cursor.fetchall()
         return list(map(get_course_by_row, rows))
@@ -41,6 +41,17 @@ class CourseRepository:
         )
 
         self._connection.commit()
+
+    def find_by_course_name(self, name, username):
+        cursor = self._connection.cursor()
+        cursor.execute(
+            "select * from courses where name = ? and username = ?",
+            (name, username)
+        )
+
+        row = cursor.fetchone()
+
+        return get_course_by_row(row)
 
     def find_courses_by_username(self, username):
         cursor = self._connection.cursor()

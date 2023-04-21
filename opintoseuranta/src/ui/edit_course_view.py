@@ -158,17 +158,21 @@ class EditCourseView:
         user_name = self._user.username
 
         course_name_value = self._course_name_entry.get()
+        old_name = self._course.name
         if len(course_name_value) == 0:
-            course_name_value = self._course.name
+            course_name_value = old_name
 
         course_weight_value = self._course_weight_entry.get()
+        old_weight = self._course.weight
         if len(course_weight_value) == 0:
-            course_weight_value = self._course.weight
+            course_weight_value = old_weight
 
         course_grade_value = self._course_grade_entry.get()
+        old_grade = self._course.grade
         if len(course_grade_value) == 0:
-            course_grade_value = self._course.grade
+            course_grade_value = old_grade
 
+        course_service.delete_course(self._course.id)
         result = course_service.add_new_course(
             user_name,
             course_name_value,
@@ -176,9 +180,14 @@ class EditCourseView:
             course_grade_value
         )
         if result == True:
-            course_service.delete_course(self._course.id)
             self._handle_cancel()
         else:
+            course_service.add_new_course(
+                user_name,
+                old_name,
+                old_weight,
+                old_grade
+            )
             self._handle_error(result, self._memory)
 
     def pack(self):
