@@ -1,8 +1,8 @@
 ## Käyttöliittymä
 
-Lopullisessa sovelluksess on 5 eri näkymää.
+Lopullisessa sovelluksess on 6 eri näkymää.
 
-- Sisään kirjautuminen
+- Sisäänkirjautuminen
 
 - Rekisteröityminen
 
@@ -11,6 +11,8 @@ Lopullisessa sovelluksess on 5 eri näkymää.
 - Kurssin lisäys
 
 - Kurssin muokkaus
+
+- Virheen ilmoitus
 
 ## Tietojen tallennus
 
