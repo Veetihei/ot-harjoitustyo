@@ -16,6 +16,10 @@ Opintoseuranta sovelluksen avulla voi pitää kirjaa omista opinnoistaan. Sovell
 
 [Arkkitehtuuri](opintoseuranta/dokumentaatio/arkkitehtuuri.md)
 
+## Linkki releaseen
+
+[Release](https://github.com/Veetihei/ot-harjoitustyo/releases/tag/Viikko5)
+
 ## Sovelluksen käyttäminen
 
 Aloita asentamalla sovelluksen riippuvuudet komennolla:
