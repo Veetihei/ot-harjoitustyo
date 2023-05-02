@@ -51,10 +51,16 @@ class CourseService:
     def add_new_course(self, username, name, weight, value):
         if len(name) < 3:
             return "Kurssin nimi on liian lyhyt"
-        if int(weight) < 0:
-            return "Opintopisteet eivät voi olla negatiivisia"
-        if int(value) < 1 or int(value) > 5:
-            return "Arvosanan on oltava 1-5 välillä"
+        try:
+            if int(weight) < 0:
+                return "Opintopisteet eivät voi olla negatiivisia"
+        except:
+            return "Opintopisteiden täytyy olla kokonaisluku"
+        try:
+            if int(value) < 1 or int(value) > 5:
+                return "Arvosanan on oltava 1-5 välillä"
+        except:
+            return "Arvosanan täytyy olla kokonaisluku"
         course_exists = self._course_repository.find_by_course_name(
             name, username)
 
