@@ -3,7 +3,18 @@ from services.course_service import course_service
 
 
 class RegisterView:
+    """Käyttäjän rekisteröitymisestä vastaava näkymä
+    """
     def __init__(self, root, handle_signin, handle_register, handle_error, memory):
+        """Luokan konstruktori
+
+        Args:
+            root: Tkinter-elementti, jonka sisään näkymä alustetaan
+            handle_signin (_type_): Kutsuttava arvo, kun käyttäjä haluaa kirjautua sisään
+            handle_register (_type_): Kutsuttava arvo, kun käyttäjä haluaa rekisteröityä
+            handle_error (_type_): Kutsuttava arvo, kun näytetään virheilmoitus
+            memory (_type_): Näkymä, johon palataan virhesivulta
+        """
         self._root = root
         self._username_entry = None
         self._password_entry = None
@@ -87,11 +98,12 @@ class RegisterView:
         else:
             self._handle_error(result, self._memory)
 
-        # print(f"Uusi käyttäjätunnus on: {username_value}")
-        # print(f"Uusi salasana on: {password_value}")
-
     def pack(self):
+        """Näyttää näkymän
+        """
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
+        """Tuhoaa näkymän
+        """
         self._frame.destroy()

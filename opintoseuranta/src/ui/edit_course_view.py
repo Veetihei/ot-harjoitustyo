@@ -3,7 +3,18 @@ from services.course_service import course_service
 
 
 class EditCourseView:
+    """Kurssin muokkaamisesta vastaava näkymä
+    """
     def __init__(self, root, course, handle_cancel, handle_error, memory):
+        """Luokan konstruktori
+
+        Args:
+            root: Tkinter elementti, jonka sisään näkymä alustetaan
+            course: Kurssi, jota muokataan
+            handle_cancel: Kutsuttava arvo, jota kutsutaan kun käyttäjä haluaa palata takaisin
+            handle_error: Kutstuttava arvo, jota kutsutaan kun halutaan näyttää virheviesti
+            memory: Sivu, jolle palataan virhe-näkymästä
+        """
         self._root = root
         self._user = course_service.get_current_user()
         self._course = course
@@ -191,7 +202,11 @@ class EditCourseView:
             self._handle_error(result, self._memory)
 
     def pack(self):
+        """Näyttää näkymän
+        """
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
+        """Tuhoaa näkymän
+        """
         self._frame.destroy()

@@ -3,7 +3,16 @@ from services.course_service import course_service
 
 
 class ErrorView:
+    """Virheiden näyttämisestä vastaava näkymä
+    """
     def __init__(self, root, error_message, previous_page):
+        """Luokan konsturktori
+
+        Args:
+            root: Tkinter elementti, jonka sisään näkymä alustetaan
+            error_message (_type_): Näytettävä virheviesti
+            previous_page (_type_): Kutsuttava arvo, kun halutaan palata edelliselle sivulle
+        """
         self._root = root
         self._error_message = error_message
         self._page = previous_page
@@ -35,7 +44,11 @@ class ErrorView:
         self._root.grid_columnconfigure(1, weight=10, minsize=300)
 
     def pack(self):
+        """Näyttää näkymän
+        """
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
+        """Tuhoaa näkymän
+        """
         self._frame.destroy()

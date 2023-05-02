@@ -3,7 +3,16 @@ from services.course_service import course_service
 
 
 class LoginView:
+    """Käyttäjän sisäänkirjautumisesta vastaava näkymä
+    """
     def __init__(self, root, handle_register, handle_signin):
+        """Luokan konstruktori
+
+        Args:
+            root: Tkinter-elementti, jonka sisään näkymä alustetaan
+            handle_register: Kutsuttava arvo, kun käyttäjä haluaa rekisteröidä uuden käyttäjän
+            handle_signin: Kutsuttava arvo, kun käyttäjä kirjautuu sisään
+        """
         self._root = root
         self._username_entry = None
         self._password_entry = None
@@ -63,11 +72,12 @@ class LoginView:
         if course_service.login(username_value, password_value) is not None:
             self._handle_signin()
 
-        # print(f"Käyttäjätunnus on: {username_value}")
-        # print(f"Salasana on: {password_value}")
-
     def pack(self):
+        """Näyttää näkymän
+        """
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
+        """Tuhoaa näkymän
+        """
         self._frame.destroy()

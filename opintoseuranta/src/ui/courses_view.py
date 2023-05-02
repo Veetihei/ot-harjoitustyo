@@ -3,7 +3,18 @@ from services.course_service import course_service
 
 
 class CoursesView:
+    """Kurssien yleisnäkymästä vastaava näkymä
+    """
     def __init__(self, root, handle_logout, handle_add_course, handle_edit_course, handle_reload):
+        """Luokan konstruktori
+
+        Args:
+            root (_type_): Tkinter elementti, jonka sisään näkymä alustetaan
+            handle_logout (_type_): Kutsuttava arvo, jota kutsutaan kun käyttäjä haluaa kirjautua ulos
+            handle_add_course (_type_): Kutsuttava arvo, jota kutsutaan kun käyttäjä haluaa lisätä kurssin
+            handle_edit_course (_type_): Kutsuttava arvo, jota kutsutaan kun käyttäjä haluaa muokata kurssia
+            handle_reload (_type_): Kutsuttava-arvo, jota kutsutaan kun kurssinäkymä halutaan päivittää
+        """
         self._root = root
         self._user = course_service.get_current_user()
         self._handle_logout = handle_logout

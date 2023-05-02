@@ -27,3 +27,8 @@
 - Muokattu ulkoasua
 - Lisätty virehiden käsittelyä kurssien lisäämiseen ja muokkaamiseen
 - Tehty testit virheiden käsittelylle
+
+## Viikko6
+
+- Lisätty käyttäjän syötteiden käsittelyä
+- Lisätty docstring dokumentaatio
