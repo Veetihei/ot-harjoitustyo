@@ -37,3 +37,4 @@
 
 - Muokattu ja siistitty koodia
 - Lisätty testausdokumentti
+- Piilotettu salasana sisäänkirjautumisen yhteydessä
