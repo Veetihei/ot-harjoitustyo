@@ -1,6 +1,6 @@
 # Tuntikirjanpito
 
-Tuntien summa: 51
+Tuntien summa: 57
 
 | Päivä | Tunnit | Mitä tehty |
 | :----| :----| :----|
@@ -17,3 +17,4 @@ Tuntien summa: 51
 | 20.4. | 4 | Virheiden käsittelyä |
 | 21.4. | 4 | Lisää virehiden käsittelyä ja niiden testausta |
 | 2.5. | 5  | Virheiden käsittelyä, koodin muokkausta ja docstring dokumentaatio |
+| 12.5. | 6 | Siistitty ja muokattu koodi lopulliseen kuntoon |
