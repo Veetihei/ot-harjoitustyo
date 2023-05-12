@@ -18,7 +18,7 @@ Opintoseuranta sovelluksen avulla voi pitää kirjaa omista opinnoistaan. Sovell
 
 ## Linkki releaseen
 
-[Release](https://github.com/Veetihei/ot-harjoitustyo/releases/tag/Viikko5)
+[Release](https://github.com/Veetihei/ot-harjoitustyo/releases/tag/final)
 
 ## Sovelluksen käyttäminen
 
