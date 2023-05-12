@@ -203,6 +203,28 @@ class TestCourseService(unittest.TestCase):
         courses = course_repository.find_all()
         self.assertEqual(len(courses), 0)
         self.assertEqual(result, "Opintopisteet eivät voi olla negatiivisia")
+    
+    def test_add_course_text_weight(self):
+        result = self.course_service.add_new_course(
+            self.user_testaaja.username,
+            self.course_ohpe.name,
+            "teksti",
+            self.course_ohpe.grade
+        )
+        courses = course_repository.find_all()
+        self.assertEqual(len(courses), 0)
+        self.assertEqual(result, "Arvosanan ja opintopisteiden täytyy olla kokonaislukuja")
+
+    def test_add_course_text_grade(self):
+        result = self.course_service.add_new_course(
+            self.user_testaaja.username,
+            self.course_ohpe.name,
+            self.course_ohpe.weight,
+            "teksti"
+        )
+        courses = course_repository.find_all()
+        self.assertEqual(len(courses), 0)
+        self.assertEqual(result, "Arvosanan ja opintopisteiden täytyy olla kokonaislukuja")
 
     def test_get_courses_by_username(self):
         courses = self.course_service.get_courses_by_username(
