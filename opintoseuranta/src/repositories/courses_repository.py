@@ -14,6 +14,7 @@ def get_course_by_row(row):
 class CourseRepository:
     """Kursseihin liittyvistä tietokantaoperaatioista vastaava luokka
     """
+
     def __init__(self, connection):
         """Luokan konstruktori
 

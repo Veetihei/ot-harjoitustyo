@@ -9,6 +9,7 @@ class Course:
         weight: kurssin opintopisteet
         grade: Kurssin arvosana
     """
+
     def __init__(self, id, username, name, weight, grade):
         """Luokan konstruktori
 

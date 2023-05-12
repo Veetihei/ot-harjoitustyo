@@ -5,6 +5,7 @@ from services.course_service import course_service
 class RegisterView:
     """Käyttäjän rekisteröitymisestä vastaava näkymä
     """
+
     def __init__(self, root, handle_signin, handle_register, handle_error, memory):
         """Luokan konstruktori
 

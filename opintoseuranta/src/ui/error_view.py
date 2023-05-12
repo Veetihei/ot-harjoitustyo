@@ -5,6 +5,7 @@ from services.course_service import course_service
 class ErrorView:
     """Virheiden näyttämisestä vastaava näkymä
     """
+
     def __init__(self, root, error_message, previous_page):
         """Luokan konsturktori
 

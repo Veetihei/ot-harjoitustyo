@@ -12,6 +12,7 @@ from repositories.courses_repository import (
 class CourseService:
     """Sovelluslogiikasta vastaava luokka
     """
+
     def __init__(
         self,
         user_repository=default_user_repository,
@@ -21,9 +22,11 @@ class CourseService:
 
         Args:
             user_repository:
-                UserRepository olio, jolla on luokkaa vastaavat metodit. Oletusarvoisesti UserRepository olio.
+                UserRepository olio, jolla on luokkaa vastaavat metodit. 
+                Oletusarvoisesti UserRepository olio.
             course_repository: 
-                CourseRepository olio, jolla on luokkaa vastaavat metodit. Oletusarvoisesti CourseRepository olio.
+                CourseRepository olio, jolla on luokkaa vastaavat metodit. 
+                Oletusarvoisesti CourseRepository olio.
         """
         self._user = None
         self._user_repository = user_repository
@@ -99,13 +102,11 @@ class CourseService:
         try:
             if int(weight) < 0:
                 return "Opintopisteet eivät voi olla negatiivisia"
-        except:
-            return "Opintopisteiden täytyy olla kokonaisluku"
-        try:
             if int(grade) < 1 or int(grade) > 5:
                 return "Arvosanan on oltava 1-5 välillä"
-        except:
-            return "Arvosanan täytyy olla kokonaisluku"
+        except ValueError:
+            #MUOKKAA TÄMÄN TESTIT KUNTOON
+            return "Arvosanan ja täytyy olla kokonaisluku"
         course_exists = self._course_repository.find_by_course_name(
             name, username)
 

@@ -5,6 +5,7 @@ from services.course_service import course_service
 class LoginView:
     """Käyttäjän sisäänkirjautumisesta vastaava näkymä
     """
+
     def __init__(self, root, handle_register, handle_signin):
         """Luokan konstruktori
 

@@ -6,6 +6,7 @@ class User:
         username: Merkkijonoarvo, joka kuvastaa käyttäjän käyttäjätunnusta
         password: Merkkijonoarvo, joka kuvastaa käyttäjän salasanaa
     """
+
     def __init__(self, username, password):
         """Luokan konstruktori
 

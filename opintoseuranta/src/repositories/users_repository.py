@@ -9,6 +9,7 @@ def get_user_by_row(row):
 class UserRepository:
     """Käyttäjiin liittyvistä tietokantaoperaatioista vastaava luokka
     """
+
     def __init__(self, connection):
         """Luokan konstruktori
 

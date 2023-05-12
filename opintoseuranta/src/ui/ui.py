@@ -10,6 +10,7 @@ from ui.error_view import ErrorView
 class UI:
     """Sovelluksen käyttöliittymästä vastaava luokka
     """
+
     def __init__(self, root):
         """Luokan konstruktori
 

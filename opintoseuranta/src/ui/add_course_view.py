@@ -5,6 +5,7 @@ from services.course_service import course_service
 class AddCourseView:
     """Kurssin lisäämisestä vastaava näkymä
     """
+
     def __init__(self, root, handle_cancel, handle_error, memory):
         """Luokan konstruktori
 
