@@ -32,3 +32,8 @@
 
 - Lisätty käyttäjän syötteiden käsittelyä
 - Lisätty docstring dokumentaatio
+
+## Viikko7
+
+- Muokattu ja siistitty koodia
+- Lisätty testausdokumentti
