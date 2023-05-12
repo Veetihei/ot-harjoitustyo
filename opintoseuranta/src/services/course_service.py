@@ -106,7 +106,7 @@ class CourseService:
                 return "Arvosanan on oltava 1-5 välillä"
         except ValueError:
             return "Arvosanan ja opintopisteiden täytyy olla kokonaislukuja"
-        
+
         course_exists = self._course_repository.find_by_course_name(
             name, username)
 
