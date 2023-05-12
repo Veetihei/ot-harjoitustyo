@@ -4,7 +4,7 @@ Tämä on helsingin yliopiston ohjelmistotekniikka-kurssille tehty palautuskansi
 
 # Opintoseuranta sovellus
 
-Opintoseuranta sovelluksen avulla voi pitää kirjaa omista opinnoistaan. Sovellukseen voi lisätä suorittamia kursseja, sekä muokata jo suoritettuja kursseja. Sovellus näyttää käyttäjällä, kuinka monta opintopistettä hän on suorittanut, millä keskiarvolla, sekä listan kaikista suorituksista. Sovellukseen voi kirjautua olemassa oolevalla käyttäjällä tai rekisteröityä uutena käyttäjänä.
+Opintoseuranta sovelluksen avulla voi pitää kirjaa omista opinnoistaan. Sovellukseen voi lisätä suorittamia kursseja, sekä muokata jo suoritettuja kursseja. Sovellus näyttää käyttäjällä, kuinka monta opintopistettä hän on suorittanut, millä keskiarvolla, sekä listan kaikista suorituksista. Sovellukseen voi kirjautua olemassa olevalla käyttäjällä tai rekisteröityä uutena käyttäjänä.
 
 ## Dokumentaatio
 
